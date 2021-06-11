@@ -1,0 +1,121 @@
+/* ============================  conversation-window   socket Page  style  ======================================== */
+
+.chat-page {
+  display: flex;
+}
+.conversation-window {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  height: 100vh;
+  /* margin-left: 20px; */
+  /* border: 1px solid #ddd; */
+  background: #fff;
+}
+.send-messagebox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 99;
+}
+.send-messagebox .ant-form-item {
+  margin-bottom: 1px;
+}
+.chat-box {
+  overflow: scroll;
+  height: calc(100vh - 193px);
+}
+.chat-list {
+  padding: 4px;
+  padding-bottom: 60px;
+  /* min-height: calc(100vh - 300px); */
+}
+.chat-list .ant-col {
+  max-width: 80%;
+}
+.chat-list-row-has-img .ant-col {
+  max-width: 32%;
+}
+
+.chat-list .left span {
+  background: #ece9e9;
+}
+.chat-list .right span {
+  background: #e0f0ff;
+  /* background: #1890ff; */
+}
+.chat-list .left,
+.chat-list .right {
+  margin-bottom: 2px;
+}
+
+.chat-list .left span,
+.chat-list .right span {
+  display: inline-block;
+  padding: 4px;
+  word-break: break-all;
+  border-radius: 4px;
+}
+
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.conversastion-active {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+.sider-bar {
+  background: '#fff';
+  height: calc(100vh - 128px);
+}
+/* 
+.sider-bar p {
+  margin: 0;
+} */
+.sider-bar > .ant-tabs-card {
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background: #fff;
+}
+.sider-bar > .ant-tabs-card .ant-tabs-content {
+  height: calc(100vh - 168px);
+  margin-top: -16px;
+}
+.sider-bar > .ant-tabs-card .ant-tabs-content > .ant-tabs-tabpane {
+  /* padding: 16px; */
+  background: #fff;
+}
+.sider-bar > .ant-tabs-card > .ant-tabs-nav::before {
+  display: none;
+}
+.sider-bar > .ant-tabs-card .ant-tabs-tab,
+[data-theme='compact'] .sider-bar > .ant-tabs-card .ant-tabs-tab {
+  background: transparent;
+  border-color: transparent;
+}
+.sider-bar > .ant-tabs-card .ant-tabs-tab-active,
+[data-theme='compact'] .sider-bar > .ant-tabs-card .ant-tabs-tab-active {
+  background: #fff;
+  border-color: #fff;
+}
+#components-tabs-demo-card-top .code-box-demo {
+  padding: 24px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.ant-image-preview-mask {
+  background-color: #000;
+}

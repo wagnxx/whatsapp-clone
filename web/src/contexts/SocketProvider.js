@@ -13,7 +13,9 @@ export default function SocketProvider({ id, children }) {
   const [socket, setsocket] = useState();
 
   useEffect(() => {
-    const newSocket = io('http://192.168.1.101:5000', {
+    const newSocket = io('http://192.168.1.101:5000/chat', {
+      path: '/chat',
+      forceNew: true,
       query: { id },
     });
     setsocket(newSocket);

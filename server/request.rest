@@ -1,0 +1,38 @@
+
+POST http://localhost:5000/user/signUp
+Content-Type: application/json
+
+{
+  "username": "zhangsan2",
+  "password": "pass12345",
+  "email":null,
+  "uid": null
+}
+###
+
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+  "username": "zhangsan2",
+  "password": "pass12345",
+  "email":null,
+  "uid": null
+}
+###
+
+POST http://localhost:5000/user/token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemhhbmdzYW4yIiwicGFzc3dvcmQiOiJwYXNzMTIzNDUiLCJlbWFpbCI6bnVsbCwidWlkIjpudWxsLCJpYXQiOjE2MjM0Mjc5ODZ9.7hnj6jTuGMtKGL-Rspeird9y3OEnkv942BR9Bb3MPNU"
+}
+###
+
+POST http://localhost:5000/user/getUser
+Content-Type: application/json
+
+{
+  "username": "test2"
+}
+###

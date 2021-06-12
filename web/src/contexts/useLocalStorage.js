@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-const PREFIX = 'whatsapp-clone-';
+const PREFIX = 'whatsapp-clone-from-server-';
 
 export default function useLocalStorage(key, initialValue) {
   const prefixedKey = PREFIX + key;
@@ -12,6 +12,7 @@ export default function useLocalStorage(key, initialValue) {
     } else {
       return initialValue;
     }
+    return null;
   });
 
   useEffect(() => {

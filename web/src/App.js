@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import useLocalStorage from './contexts/useLocalStorage';
 import DashboardContextForUserIdProvider from './contexts/dashboardContext';
@@ -13,9 +14,11 @@ import DBContextProvider from './contexts/DBContextProvider';
 import LoginPage from '@/views/login';
 
 export default function App() {
-  const [id, setId] = useLocalStorage('id');
+  const [user] = useLocalStorage('user');
 
-  const dashboard = (
+  const id = user && user.uid;
+
+  const DashboardWithContext = () => (
     <SocketProvider id={id}>
       <DBContextProvider>
         <WindowResizeContextProvider>
@@ -31,5 +34,13 @@ export default function App() {
     </SocketProvider>
   );
 
-  return id ? dashboard : <LoginPage onIdSubmit={setId} />;
+  // return id ? dashboard : <LoginPage onIdSubmit={setId} />;
+  return (
+    <Router>
+      <Switch>
+        <Route path="/login" component={LoginPage} />
+        <Route path="/" component={DashboardWithContext} />
+      </Switch>
+    </Router>
+  );
 }
